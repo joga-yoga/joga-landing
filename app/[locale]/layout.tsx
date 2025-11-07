@@ -61,6 +61,14 @@ export async function generateMetadata({ params }: { params: LayoutParams }): Pr
       locale: locale === "pl" ? "pl_PL" : "en_US",
       title,
       description,
+      images: [
+        {
+          url: "/social/og-default.webp",
+          width: 1200,
+          height: 630,
+          alt: "joga.yoga open graph image",
+        },
+      ],
     },
   };
 }
