@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 32">
+  <path d="M6 16a10 10 0 0 1 10-10h88" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+  <path d="M6 16a10 10 0 0 0 10 10h60l12 6v-12h10a16 16 0 0 0 16-16" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+  <text x="20" y="19" font-family="'Inter', 'Helvetica', 'Arial', sans-serif" font-size="12" fill="currentColor">wyjazdy</text>
+</svg>
