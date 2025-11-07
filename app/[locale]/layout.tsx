@@ -5,19 +5,17 @@ import { ThemeProvider } from "next-themes";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { cn } from "@/lib/utils";
-import { SUPPORTED_LOCALES, getContent } from "@/content";
+import { getContent, resolveLocale, type Locale } from "@/content";
 
 import "../globals.css";
 
-type Locale = (typeof SUPPORTED_LOCALES)[number];
-
-type LayoutParams = Promise<{
+type LocaleRouteParams = Promise<{
   locale: string;
 }>;
 
 type LocaleLayoutProps = {
   children: ReactNode;
-  params: LayoutParams;
+  params: LocaleRouteParams;
 };
 
 const metadataMap: Record<Locale, { title: string; description: string }> = {
@@ -33,11 +31,7 @@ const metadataMap: Record<Locale, { title: string; description: string }> = {
   },
 };
 
-function resolveLocale(rawLocale: string): Locale {
-  return SUPPORTED_LOCALES.includes(rawLocale as Locale) ? (rawLocale as Locale) : "en";
-}
-
-export async function generateMetadata({ params }: { params: LayoutParams }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: LocaleRouteParams }): Promise<Metadata> {
   const { locale: rawLocale } = await params;
   const locale = resolveLocale(rawLocale);
   const { title, description } = metadataMap[locale];

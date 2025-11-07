@@ -1,20 +1,13 @@
 import { Hero } from "@/components/hero";
 import { ProjectCard } from "@/components/project-card";
 import { Container } from "@/components/ui/container";
-import type { Locale } from "@/content";
-import { SUPPORTED_LOCALES, getContent } from "@/content";
-
-type PageParams = Promise<{
-  locale: string;
-}>;
+import { SUPPORTED_LOCALES, getContent, resolveLocale } from "@/content";
 
 type LandingPageProps = {
-  params: PageParams;
+  params: Promise<{
+    locale: string;
+  }>;
 };
-
-function resolveLocale(rawLocale: string): Locale {
-  return SUPPORTED_LOCALES.includes(rawLocale as Locale) ? (rawLocale as Locale) : "en";
-}
 
 export default async function LandingPage({ params }: LandingPageProps) {
   const { locale: rawLocale } = await params;
