@@ -45,11 +45,11 @@ export function Hero({ badge, title, description, primaryCta, secondaryCta }: He
           <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">{title}</h1>
           <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">{description}</p>
           <div className="flex flex-wrap gap-4">
-            <Button asChild href={primaryCta.href}>
+            <Button asChild>
               <Link href={primaryCta.href}>{primaryCta.label}</Link>
             </Button>
             {secondaryCta ? (
-              <Button asChild href={secondaryCta.href} variant="ghost">
+              <Button asChild variant="ghost">
                 <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
               </Button>
             ) : null}
