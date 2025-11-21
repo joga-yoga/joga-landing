@@ -5,26 +5,26 @@ export const en = {
     cta: "Get in touch",
   },
   wyjazdy: {
-    title: "wyjazdy.yoga — Retreat Listings",
-    lead: "Sell your yoga retreats to the Polish community with native-language presentation and a friendly, trusted tone.",
+    title: "Share Your Yoga Retreats in Poland",
+    lead: "A clear, welcoming way to present your retreats to Polish yoga travelers who value trust and authenticity.",
     bullets: [
-      "Listings presented in authentic Polish style and language",
-      "Free to publish during 2025 — later, only a small booking fee applies",
-      "Automatic Polish translation — add your retreat in under 5 minutes",
+      "Your retreat translated into natural Polish for true local reach",
+      "Free to publish during our early growth phase",
+      "Fast setup — add your retreat in minutes",
     ],
     cta: "Publish your retreat",
-    link: "https://wyjazdy.yoga/",
+    link: "https://wyjazdy.yoga/"
   },
   wydarzenia: {
-    title: "wydarzenia.yoga — Yoga Events",
-    lead: "Promote workshops, festivals, and online sessions for Poland’s yoga audience — clear, local, and easy to find.",
+    title: "Share Your Yoga Events in Poland",
+    lead: "A simple, welcoming way to present your workshops and classes to a growing Polish yoga audience.",
     bullets: [
-      "Ideal for yoga, breathwork, and meditation events",
-      "Great for festivals, workshops, and live or online formats",
-      "Every listing translated into Polish automatically",
+      "Perfect for workshops, studio events, festivals and online sessions",
+      "Your listing naturally translated into Polish for local reach",
+      "Free to publish during our early growth phase",
     ],
     cta: "List your event",
-    link: "https://wydarzenia.yoga/",
+    link: "https://wydarzenia.yoga/"
   },
   footer: {
     smallprint: "© joga.yoga — authentic, transparent, native Polish listings.",

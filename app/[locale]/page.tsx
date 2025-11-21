@@ -17,7 +17,7 @@ export default async function LandingPage({ params }: LandingPageProps) {
   return (
     <>
       <Hero
-        badge="joga.yoga"
+        badge="joga.yoga®"
         title={content.hero.title}
         description={content.hero.text}
         primaryCta={{ label: content.hero.cta, href: "mailto:hello@joga.yoga" }}

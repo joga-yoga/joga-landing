@@ -39,7 +39,7 @@ export function Hero({ badge, title, description, primaryCta, secondaryCta }: He
     <section className="relative overflow-hidden pb-16 pt-20 sm:pt-24">
       <Container className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="space-y-6">
-          <span className="inline-flex rounded-full border border-border px-3 py-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+          <span className="inline-flex rounded-full px-3 py-1 text-xs normal-case tracking-[0.1em] text-foreground">
             {badge}
           </span>
           <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">{title}</h1>
