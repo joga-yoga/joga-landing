@@ -57,7 +57,7 @@ export function ProjectCard({ title, lead, bullets, cta, href, imageSrc, logoSvg
             ))}
           </ul>
       </div>
-      <Button asChild href={href} className="w-full">
+      <Button asChild className="w-full">
         <Link href={href} target="_blank" rel="noreferrer">
           {cta}
         </Link>
