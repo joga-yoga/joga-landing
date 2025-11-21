@@ -20,7 +20,7 @@ export default async function LandingPage({ params }: LandingPageProps) {
         badge="joga.yoga®"
         title={content.hero.title}
         description={content.hero.text}
-        primaryCta={{ label: content.hero.cta, href: "mailto:hello@joga.yoga" }}
+        primaryCta={{ label: content.hero.cta, href: "mailto:namaskar@joga.yoga" }}
         secondaryCta={{
           label: locale === "pl" ? "Poznaj nasze projekty" : "Explore our projects",
           href: `/${locale}#projects`,
