@@ -1,4 +1,5 @@
 import { Hero } from "@/components/hero";
+import { DecisionSupport } from "@/components/decision-support";
 import { ProjectCard } from "@/components/project-card";
 import { Container } from "@/components/ui/container";
 import { SUPPORTED_LOCALES, getContent, resolveLocale } from "@/content";
@@ -59,6 +60,8 @@ export default async function LandingPage({ params }: LandingPageProps) {
               logoSvgSrc="/icons/logo-wydarzenia.svg"
             />
           </div>
+
+          <DecisionSupport locale={locale} />
         </Container>
       </section>
     </>
