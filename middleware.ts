@@ -1,20 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const LOCALES = ["pl", "en"] as const;
-const DEFAULT_LOCALE = "en";
-const COOKIE_NAME = "joga_locale";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "./content";
 
-function getLocaleFromAcceptLanguage(headerValue: string | null): "pl" | "en" {
+const COOKIE_NAME = "joga_locale";
+type Locale = (typeof SUPPORTED_LOCALES)[number];
+
+function isSupportedLocale(value: string | undefined | null): value is Locale {
+  return SUPPORTED_LOCALES.includes(value as Locale);
+}
+
+function getLocaleFromAcceptLanguage(headerValue: string | null): Locale {
   if (!headerValue) return DEFAULT_LOCALE;
-  // Very simple parse: if any language tag starts with "pl", pick "pl"
-  const lower = headerValue.toLowerCase();
-  return lower.includes("pl") ? "pl" : "en";
+  return headerValue.toLowerCase().includes("pl") ? "pl" : "en";
 }
 
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  // Ignore Next.js internals and static assets
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
@@ -23,29 +25,26 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // If URL already contains locale prefix, do nothing
-  const hasLocalePrefix = LOCALES.some((loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`));
+  const hasLocalePrefix = SUPPORTED_LOCALES.some(
+    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
+  );
+
   if (hasLocalePrefix) {
     return NextResponse.next();
   }
 
-  // Only auto-redirect on the root or on paths without locale
-  // (Here we redirect for any path without locale prefix.)
   const cookieLocale = req.cookies.get(COOKIE_NAME)?.value;
-  const localeFromCookie = (cookieLocale === "pl" || cookieLocale === "en") ? cookieLocale : null;
-
-  const locale =
-    localeFromCookie ?? getLocaleFromAcceptLanguage(req.headers.get("accept-language"));
+  const locale = isSupportedLocale(cookieLocale)
+    ? cookieLocale
+    : getLocaleFromAcceptLanguage(req.headers.get("accept-language"));
 
   const url = req.nextUrl.clone();
   url.pathname = `/${locale}${pathname === "/" ? "" : pathname}`;
 
   const res = NextResponse.redirect(url);
-
-  // Persist decision (especially important if chosen from Accept-Language)
   res.cookies.set(COOKIE_NAME, locale, {
     path: "/",
-    maxAge: 60 * 60 * 24 * 365, // 1 year
+    maxAge: 60 * 60 * 24 * 365,
     sameSite: "lax",
   });
 
