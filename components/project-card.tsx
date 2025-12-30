@@ -26,7 +26,7 @@ export function ProjectCard({ title, lead, bullets, cta, href, imageSrc, logoSvg
             alt={`${title} logo`}
             width={LOGO_DIMENSIONS.width}
             height={LOGO_DIMENSIONS.height}
-            className="h-26 w-26 text-foreground/80"
+            className="h-32 w-32 text-foreground/80"
             priority={false}
           />
           <h3 className="text-xl font-semibold text-foreground">{title}</h3>
