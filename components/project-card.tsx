@@ -42,7 +42,7 @@ export function ProjectCard({ title, lead, bullets, cta, href, imageSrc, logoSvg
           />
         </div>
         <p className="text-base leading-relaxed text-muted-foreground">{lead}</p>
-          <ul className="space-y-3 text-sm text-muted-foreground">
+          <ul className="space-y-3 text-base text-muted-foreground">
             {bullets.map((bullet) => (
               <li key={bullet} className="flex gap-3">
                 {/* Bullet dot from font */}

@@ -6,7 +6,7 @@ export const pl = {
   },
   wyjazdy: {
     title: "Wyjazdy i retreaty",
-    lead: "Sprzedawaj swoje wyjazdy jogowe polskiej społeczności — w autentycznym języku i z zaufaniem.",
+    lead: " ",
     bullets: [
       "Jedno stałe miejsce, które realnie wspiera sprzedaż wyjazdów",
       "Dodanie ogłoszenia zajmuje ok. 5 minut",
@@ -18,7 +18,7 @@ export const pl = {
   },
   wydarzenia: {
     title: "Wydarzenia jogowe",
-    lead: "Promuj warsztaty, festiwale i spotkania online dla polskiej publiczności jogowej — jasno, lokalnie i z łatwą widocznością.",
+    lead: " ",
     bullets: [
       "Lepsza czytelność oferty niż w wydarzeniach na Facebooku",
       "Dobra alternatywa dla własnej strony",
