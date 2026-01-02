@@ -18,8 +18,8 @@ const LOGO_DIMENSIONS = { width: 96, height: 96 };
 
 export function ProjectCard({ title, lead, bullets, cta, href, imageSrc, logoSvgSrc }: ProjectCardProps) {
   return (
-    <article className="flex h-full flex-col justify-between gap-8 rounded-2xl border border-neutral-200 bg-surface p-8 shadow-soft transition-shadow hover:shadow-soft-strong">
-      <div className="space-y-6">
+    <article className="flex h-full flex-col justify-between gap-8 rounded-3xl border border-neutral-200 bg-background/80 p-8 shadow-soft transition-shadow hover:shadow-soft-strong">
+      <div className="space-y-4">
         <div className="flex items-center justify-between">
           <Image
             src={logoSvgSrc}
@@ -42,9 +42,9 @@ export function ProjectCard({ title, lead, bullets, cta, href, imageSrc, logoSvg
           />
         </div>
         <p className="text-base leading-relaxed text-muted-foreground">{lead}</p>
-          <ul className="space-y-3 text-base text-muted-foreground">
+          <ul className="space-y-2 text-base text-muted-foreground">
             {bullets.map((bullet) => (
-              <li key={bullet} className="flex gap-3">
+              <li key={bullet} className="flex gap-2">
                 {/* Bullet dot from font */}
                 <span
                   className="mt-1 text-lg leading-none text-accent"

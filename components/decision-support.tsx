@@ -75,7 +75,7 @@ export function DecisionSupport({ locale }: { locale: Locale }) {
   const copy = DECISION_SUPPORT_COPY[locale];
 
   return (
-    <div className="mt-12 rounded-3xl border bg-background/80 p-8 shadow-soft sm:mt-16 sm:p-10">
+    <div className="mt-12 rounded-3xl border border-neutral-200 bg-background/80 p-8 shadow-soft sm:mt-16 sm:p-10">
       <div className="space-y-4 sm:space-y-5">
         <h3 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
           {copy.title}
@@ -87,7 +87,7 @@ export function DecisionSupport({ locale }: { locale: Locale }) {
         {copy.items.map((item, index) => {
           const Icon = ICONS[index];
           const cardClasses = [
-            "rounded-2xl border bg-background p-6 shadow-sm",
+            "rounded-2xl border border-neutral-200 bg-surface p-6 shadow-sm",
             index === copy.items.length - 1 ? "lg:col-span-2 xl:col-span-1" : "",
           ]
             .filter(Boolean)
@@ -96,7 +96,7 @@ export function DecisionSupport({ locale }: { locale: Locale }) {
           return (
             <article key={item.title} className={cardClasses}>
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-muted text-foreground/80">
+                <div className="flex h-12 w-12 items-center bg-white justify-center rounded-xl bg-muted text-foreground/80">
                   <Icon className="h-6 w-6" aria-hidden />
                 </div>
                 <div className="space-y-2">
