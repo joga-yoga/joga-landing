@@ -29,7 +29,7 @@ export function Footer({ locale, content }: FooterProps) {
         <span>{content.footer.smallprint}</span>
         <div className="flex items-center gap-4">
           <Link
-            href="mailto:hello@joga.yoga"
+            href="mailto:hello@joga.yoga" target="_blank"
             className="transition-colors hover:text-foreground"
           >
             {copy.contact}
