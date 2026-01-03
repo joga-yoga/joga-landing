@@ -32,11 +32,11 @@ export default async function LandingPage({ params }: LandingPageProps) {
         <Container className="space-y-10">
           <div className="max-w-2xl space-y-4">
             <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-              {locale === "pl" ? "Joga potrzebuje przestrzeni" : "Two platforms for the Polish yoga market"}
+              {locale === "pl" ? "Strony do publikacji ofert jogowych" : "Two platforms for the Polish yoga market"}
             </h2>
             <p className="text-base text-muted-foreground sm:text-lg">
               {locale === "pl"
-                ? "Wyjazdy i warsztaty jogowe w jednym miejscu — z uważnością na ludzi"
+                ? "Wyjazdy i wydarzenia w jednym miejscu — żeby łatwiej było je znaleźć"
                 : "Yoga retreats and events within one ecosystem — built for organizers who want visibility without noise or sales pressure"}
             </p>
           </div>
